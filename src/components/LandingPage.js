@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import Portfolio from './Portfolio'
 
@@ -32,11 +31,12 @@ export default class LandingPage extends Component {
           </a>
         </div>
           <Body id="Body">
-              <h3>Hi. I'm Qing. I'm a junior developer. Recently I graduated from a three month 
+             
+                  Hi. I'm Qing. I'm a junior developer. Recently I graduated from a three month 
                   immersive web development course at General Assembly. Here's a sample of 
                   some of the apps I've built in class. Each project was built in a week long agile sprint
-                  with version control.  
-              </h3>
+                  with version control. Click on their icons to learn more about them and see them in action.  
+              
           </Body>
           <div>
               <Portfolio/>
