@@ -4,11 +4,14 @@ import { Parallax, ParallaxLayer } from 'react-spring/dist/addons'
 import {Spring, config} from 'react-spring'
 import styled from 'styled-components'
 
+//background color is consistent across both parallax screens
+//this div will serve as the "wrapper" in the return function
 const BackgroundDiv = styled.div`
   background: linear-gradient(to right, SlateBlue 0%, DeepSkyBlue 100%);
   height: 100vh;
   width: 100vw;
 `
+//TextDiv styled-component styling for flavor text 
 const TextDiv = styled.div`
     display: flex;
     align-items: center;
@@ -20,14 +23,9 @@ const TextDiv = styled.div`
     margin-left: 50%;
     text-transform: uppercase;
 `
-const CenterProjectCardsDiv = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 40vh;
-  margin-left: 50%;
-  margin-right: 50%;
+//this styled-component is to align the contents of Portfolio.js 
+const CenterProjectCardsDiv = styled.div` 
+  padding-top: 15%;
 `
 
 export default class LandingPage extends Component {
@@ -36,7 +34,6 @@ export default class LandingPage extends Component {
       <BackgroundDiv>
         Welcome to Qinglandia
       <Parallax pages={2} scrolling={false}vertical ref={ref=> this.parallax = ref}>
-      {/* Splash Page/Hero Banner */}
         <ParallaxLayer offset={0} speed={0.9}>
         <TextDiv onClick={()=> this.parallax.scrollTo(1)}>  
             <Spring config={config.default} from={{opacity:0}} to={{opacity:1}} reset={true}>
