@@ -35,7 +35,7 @@ export default class LandingPage extends Component {
     return (
       <BackgroundDiv>
         Welcome to Qinglandia
-      <Parallax className="container" pages={2} scrolling={true} vertical ref={ref=> this.parallax = ref}>
+      <Parallax pages={2} scrolling={false}vertical ref={ref=> this.parallax = ref}>
       {/* Splash Page/Hero Banner */}
         <ParallaxLayer offset={0} speed={0.9}>
         <TextDiv onClick={()=> this.parallax.scrollTo(1)}>  
