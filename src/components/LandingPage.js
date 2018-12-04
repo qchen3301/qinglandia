@@ -2,13 +2,12 @@ import React, { Component } from 'react'
 import Portfolio from './Portfolio'
 import AboutMe from './AboutMe'
 import Contact from './Contact'
-import './style.css'
 import { Parallax, ParallaxLayer } from 'react-spring/dist/addons'
 import styled from 'styled-components'
 
-const LandingPageBackground = styled.span`
+const LandingPageBackground = styled.div`
   background-color: #20232f;
-  clip-path: polygon(20vw 0, 70% 0, calc(70% - 20vw) 100%, 0 100%);
+  clip-path: polygon(75% 0%, 100% 50%, 100% 100%, 0% 100%, 74% 52%, 0% 0%);
 `
 
 export default class LandingPage extends Component {
