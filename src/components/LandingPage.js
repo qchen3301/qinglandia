@@ -27,23 +27,6 @@ const TextDiv = styled.div`
     font-size: 1em;
 `
 
-//TextLinks styling for Links
-const TextLinks = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  text-align: left;
-  padding-top: 10px;
-  margin-right: 10px;
-  margin-left: 50%;
-  text-transform: uppercase;
-  font-family: 'Inconsolata', monospace;
-  color: rgba(51,255,51,1);
-  font-size: 1em;
-  text-shadow: 4px 4px 5px #2f6627;
-  background:red;
-`
 //this styled-component is to align the contents of Portfolio.js 
 const CenterProjectCardsDiv = styled.div` 
   padding-top: 5%;
@@ -60,11 +43,10 @@ const StyledButton = styled.button`
   border-radius: 1px;
   font-size: 1em;
 	background-color:rgba(0,0,0,0);
-	border:5px solid #18ab29;
+	border:1px solid #18ab29;
   color: rgba(51,255,51,0.5);
   font-family: 'Inconsolata', monospace;
-	font-size:28px;
-	padding:23px 23px;
+	padding:11px 11px;
 	text-shadow:4px 4px 5px #2f6627;
 `
 
@@ -72,11 +54,6 @@ export default class LandingPage extends Component {
   render() {
     return (
       <BackgroundDiv>
-        <TextLinks>
-        Git - Hub <br/>
-        Linked - In <br/>
-        Electronic Mail<br/>
-        </TextLinks>
       <Parallax pages={2} scrolling={false}vertical ref={ref=> this.parallax = ref}>
         <ParallaxLayer offset={0} speed={0.9}>
         <TextDiv onClick={()=> this.parallax.scrollTo(1)}>  
@@ -103,7 +80,7 @@ export default class LandingPage extends Component {
         </ParallaxLayer>
         {/* Projects */}
         <ParallaxLayer offset={1} speed={0.5}>
-          <br/><br/><br/><br/>
+          
           <StyledButton onClick={()=> this.parallax.scrollTo(0)}>The Sun Always Shines In CyberS P A C E</StyledButton>
           <CenterProjectCardsDiv><Portfolio/></CenterProjectCardsDiv>
         </ParallaxLayer>
