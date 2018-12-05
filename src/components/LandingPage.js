@@ -27,19 +27,16 @@ const TextDiv = styled.div`
     font-size: 1em;
 `
 
-//this styled-component is to align the contents of Portfolio.js 
-const CenterProjectCardsDiv = styled.div` 
-  padding-top: 5%;
-`
-const StyledButton = styled.button`
+// a flexbox container to hold buttons
+const StyledButtons = styled.div`
   display: flex;
   justify-content: center;
-  margin-right: auto;
   margin-top: 15px;
-  margin-left: auto;
+  align-items: stretch;
+`
+
+const StyledButton = styled.button`
   border: 3px;
-  color: black;
-  border: 2px solid palevioletred;
   border-radius: 1px;
   font-size: 1em;
 	background-color:rgba(0,0,0,0);
@@ -54,7 +51,7 @@ export default class LandingPage extends Component {
   render() {
     return (
       <BackgroundDiv>
-      <Parallax pages={2} scrolling={false}vertical ref={ref=> this.parallax = ref}>
+      <Parallax pages={2} scrolling={true} vertical ref={ref=> this.parallax = ref}>
         <ParallaxLayer offset={0} speed={0.9}>
         <TextDiv onClick={()=> this.parallax.scrollTo(1)}>  
             <Spring config={config.default} from={{opacity:0}} to={{opacity:1}} reset={true}>
@@ -78,11 +75,18 @@ export default class LandingPage extends Component {
             </Spring>
           </TextDiv> 
         </ParallaxLayer>
+
         {/* Projects */}
         <ParallaxLayer offset={1} speed={0.5}>
-          
-          <StyledButton onClick={()=> this.parallax.scrollTo(0)}>The Sun Always Shines In CyberS P A C E</StyledButton>
-          <CenterProjectCardsDiv><Portfolio/></CenterProjectCardsDiv>
+          <StyledButtons>
+            <StyledButton onClick={()=> this.parallax.scrollTo(0)}>^</StyledButton>
+          </StyledButtons>
+          <StyledButtons>
+            <StyledButton onClick={()=> window.location.replace("https://github.com/qchen3301/")}>GIT-hub</StyledButton>
+            <StyledButton onClick={()=> window.location.replace("https://www.linkedin.com/in/qing-chen-a7774b60/")}>link[e]d in</StyledButton>
+            <StyledButton onClick={()=> window.location.href = "mailto:q.chen.3301@gmail.com"}>electronic mail</StyledButton>
+          </StyledButtons>
+          <Portfolio/>
         </ParallaxLayer>
       </Parallax>
       </BackgroundDiv>

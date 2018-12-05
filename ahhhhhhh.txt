@@ -1,0 +1,200 @@
+PortfolioDiv acts as the flexbox container
+it contains the styling to align the "cards" in the center
+ProjectAnchornd space them evenly
+const PortfolioDiv = styled.div`
+  display: flex;
+  flex-direction: wrap;
+  justify-content: center;
+  margin-top: 5em;
+  background: blue;
+  @media (min-width: 40em) {
+    margin-top: -1em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  @media (min-width: 60rem) {
+    margin-top: inherit;
+  }
+`
+CardDiv styles the dimensions of the individual "card"
+const CardDiv = styled.div`
+  width: calc(30% - 2rem);
+  margin: 1rem;
+  @media (min-width: 40em) {
+    margin-bottom: 1em;
+    display: flex;
+    flex: 0 1 calc(50% - 0.5em);
+    width: calc(50% - 1em);
+  }
+  @media (min-width: 60em) {
+    margin-bottom: 2em;
+    display: flex;
+    flex: 0 1 calc(33% - 0.5em);
+    width: calc(33% - 0.5em);
+  }
+`
+<PortfolioDiv>
+<CardDiv>
+  <CardContent>
+  <h4>Slots Game</h4>
+  <p>A slots game throwback to the late 90s era of website design</p>
+  </CardContent>
+</CardDiv>
+<CardDiv>
+  <CardContent>
+  <h4>College!</h4>
+  <p>A (sigh) to-do list app to help my little sister keep track of her application process to various colleges</p>
+  </CardContent>
+</CardDiv>
+<CardDiv>
+  <CardContent>
+    <h4>The Taroge</h4>
+    <p>The capstone project! A React-On-Rails app making external API calls on the back-end</p>
+  </CardContent>
+</CardDiv>
+<CardDiv>
+  <CardContent>
+    <h4>Qinglandia</h4>
+    <p>This website! Click on this card to go to the Github page</p>
+  </CardContent>
+</CardDiv>
+</PortfolioDiv>
+
+
+CardContent styles the content of each individual "card"
+const CardContent = styled.div`
+  text-align: center;
+  align-items: center;
+  min-height: 280px;
+`
+<StyledArticle>
+<ProjectTitle>Das It Mayne</ProjectTitle>
+<GridAutoFillDiv>
+
+  <StyledSection>
+    <ProjectAnchor href="#" class="project-link" target="_blank">
+      <StyledImg src="https:www.placecage.com/200/100" alt="our lord and savior"/>
+      <ProjectInfoDiv>
+        <ProjectTitleH3>Project One DogeSlots</ProjectTitleH3>
+        <ProjectDetails>Responsive Web Design</ProjectDetails>
+    </ProjectInfoDiv>
+  </ProjectAnchor>
+  </StyledSection>
+
+  <StyledSection>
+  <ProjectAnchor href="#" class="project-link" target="_blank">
+    <StyledImg src="https:www.placecage.com/200/100" alt="our lord and savior"/>
+    <ProjectInfoDiv>
+      <ProjectTitleH3>Project Two College!</ProjectTitleH3>
+      <ProjectDetails>Responsive Web Design</ProjectDetails>
+    </ProjectInfoDiv>
+  </ProjectAnchor>
+  </StyledSection>
+
+  <StyledSection>
+    <ProjectAnchor href="#" class="project-link" target="_blank">
+      <StyledImg src="https:www.placecage.com/200/100" alt="our lord and savior"/>
+      <ProjectInfoDiv>
+        <ProjectTitleH3>Project Three The Taroge</ProjectTitleH3>
+        <ProjectDetails>Responsive Web Design</ProjectDetails>
+      </ProjectInfoDiv>
+    </ProjectAnchor>
+  </StyledSection>
+  
+</GridAutoFillDiv>
+</StyledArticle>
+
+const StyledArticle = styled.article`
+  padding: 6em 1.5em;
+  background-color: #d8dbe2;
+`
+const ProjectTitle = styled.h2`
+  font-size: 2em;
+  text-align: center;
+  text-transform: uppercase;
+  color: green;
+`
+const GridAutoFillDiv = styled.div`
+  display: grid;
+  grid-template-columns: repeat()(auto-fit, minmax()(300px, 1fr));
+  grid-gap: 0.5em;
+`
+const StyledSection = styled.section`
+  justify-self: center;
+  min-width: 300px;
+  margin: 1em;
+  background-color: #fff;
+  box-shadow: 0 0 20px -7px #000;
+  border-radius: 6px;
+  /* transition: 0.2s;
+  & :hover {
+    box-shadow: 0 7px 25px -10px #000;
+    transform: translateY(-10px);
+  } */
+`
+const StyledImg = styled.img`
+  border-bottom: 3px solid #58a4b0;
+  border-radius: 6px 6px 0 0;
+`
+const ProjectInfoDiv = styled.div`
+  padding: 1em;
+`
+const ProjectTitleH3 = styled.h3`
+  font-size: 1.2em;
+  letter-spacing: -0.8px;
+  color: green;
+`
+const ProjectDetails = styled.p`
+  font-size: 0.9em;
+  color: green;
+`
+const ProjectAnchor = styled.a`
+  display: block;
+`
+
+const WrapperDiv = styled.div`
+  margin: 15px;
+  background-color: red;
+`
+const RowDiv = styled.main`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  
+`
+const ColumnDiv = styled.article`
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
+  background-color: blue;
+  margin: 1px;
+  @media (max-width: 64em) {
+    width: calc(50% - 2em);
+  }
+`
+<WrapperDiv>
+<RowDiv>
+  <ColumnDiv>
+    <h3>Project 1 DogeSlots</h3>
+    <p>A slots game throwback to the late 90s era of website design</p>
+  </ColumnDiv>
+  <ColumnDiv>
+    <h3>Project 2 College!</h3>
+    <p>A (sigh) to-do list app to help my little sister keep track of her application process to various colleges</p>
+  </ColumnDiv>
+  <ColumnDiv>
+    <h3>Project 3 Taroge</h3>
+    <p>The capstone project! A React-On-Rails app making external API calls on the back-end</p>
+  </ColumnDiv>
+  <ColumnDiv>
+    <h3>Qinglandia.com</h3>
+    <p>Man oh man do I hate flexbox</p> 
+  </ColumnDiv>
+  <ColumnDiv>
+    <h3>The Sun Always Shines In C Y B E R S P A C E</h3>
+    <p>My first attempt at a Web 2.0 website (saucy language ahead)</p>
+  </ColumnDiv>
+</RowDiv>
+</WrapperDiv>

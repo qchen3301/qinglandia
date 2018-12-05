@@ -1,136 +1,61 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-
-//PortfolioDiv acts as the flexbox container
-//it contains the styling to align the "cards" in the center
-//and space them evenly
-// const PortfolioDiv = styled.div`
-//   display: flex;
-//   flex-direction: wrap;
-//   justify-content: center;
-//   margin-top: 5em;
-//   background: blue;
-//   @media (min-width: 40em) {
-//     margin-top: -1em;
-//     display: flex;
-//     justify-content: space-between;
-//     flex-wrap: wrap;
-//   }
-//   @media (min-width: 60rem) {
-//     margin-top: inherit;
-//   }
-// `
-//CardDiv styles the dimensions of the individual "card"
-// const CardDiv = styled.div`
-//   width: calc(30% - 2rem);
-//   margin: 1rem;
-//   @media (min-width: 40em) {
-//     margin-bottom: 1em;
-//     display: flex;
-//     flex: 0 1 calc(50% - 0.5em);
-//     width: calc(50% - 1em);
-//   }
-//   @media (min-width: 60em) {
-//     margin-bottom: 2em;
-//     display: flex;
-//     flex: 0 1 calc(33% - 0.5em);
-//     width: calc(33% - 0.5em);
-//   }
-// `
-
-{/* <PortfolioDiv>
-<CardDiv>
-  <CardContent>
-  <h4>Slots Game</h4>
-  <p>A slots game throwback to the late 90s era of website design</p>
-  </CardContent>
-</CardDiv>
-<CardDiv>
-  <CardContent>
-  <h4>College!</h4>
-  <p>A (sigh) to-do list app to help my little sister keep track of her application process to various colleges</p>
-  </CardContent>
-</CardDiv>
-<CardDiv>
-  <CardContent>
-    <h4>The Taroge</h4>
-    <p>The capstone project! A React-On-Rails app making external API calls on the back-end</p>
-  </CardContent>
-</CardDiv>
-<CardDiv>
-  <CardContent>
-    <h4>Qinglandia</h4>
-    <p>This website! Click on this card to go to the Github page</p>
-  </CardContent>
-</CardDiv>
-
-</PortfolioDiv> */}
-
-
-
-
-//CardContent styles the content of each individual "card"
-// const CardContent = styled.div`
-//   text-align: center;
-//   align-items: center;
-//   min-height: 280px;
-// `
-
-const StyledArticle = styled.article`
-  padding: 6em 1.5em;
-  background-color: #d8dbe2;
+const StyledMain = styled.main`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
 `
-const ProjectTitle = styled.h2`
-  font-size: 2em;
-  text-align: center;
-  text-transform: uppercase;
-  color: green;
+const StyledCard = styled.article`
+  flex: 0 0 200px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
 `
-const GridAutoFillDiv = styled.div`
-  display: grid;
-  grid-template-columns: repeat()(auto-fit, minmax()(300px, 1fr));
-  grid-gap: 0.5em;
+const CardImg = styled.img`
+  max-width: 100%;
 `
-
+const CardTxt = styled.div`
+  padding: 0 20px 20px;
+`
+const CardBtn = styled.button`
+  padding: 0 20px 20px;
+  background: gray;
+  border: 0;
+  color: white;
+  padding: 10px;
+  width: 100%;
+`
 export default class Portfolio extends Component {
   render() {
     return (
-      <StyledArticle>
-        <ProjectTitle>Das It Mayne</ProjectTitle>
-        <GridAutoFillDiv>
-          <section class="project">
-            <a href="#" class="project-link" target="_blank">
-              <img src="https:www.placecage.com/200/100" alt="our lord and savior"/>
-              <div class="projectInfo">
-                <h3 class="project-title">Project One DogeSlots</h3>
-                <p class="project-details">Responsive Web Design</p>
-            </div>
-          </a>
-          </section>
-
-          <section class="project">
-          <a href="#" class="project-link" target="_blank">
-            <img src="https:www.placecage.com/200/100" alt="our lord and savior"/>
-            <div class="projectInfo">
-              <h3 class="project-title">Project One DogeSlots</h3>
-              <p class="project-details">Responsive Web Design</p>
-            </div>
-          </a>
-          </section>
-
-          <section class="project">
-            <a href="#" class="project-link" target="_blank">
-              <img src="https:www.placecage.com/200/100" alt="our lord and savior"/>
-              <div class="projectInfo">
-                <h3 class="project-title">Project One DogeSlots</h3>
-                <p class="project-details">Responsive Web Design</p>
-              </div>
-            </a>
-          </section>
-          
-        </GridAutoFillDiv>
-      </StyledArticle>
+      <StyledMain>
+        <StyledCard>
+          <CardImg src="https://www.placecage.com/200/300" alt="our lord and savior" />
+          <CardTxt>
+            <h3>DOGE</h3>
+            <p>....</p>
+            <CardBtn>Twenty Years On Your Homeworld's Track</CardBtn>
+          </CardTxt>
+        </StyledCard>
+        <StyledCard>
+          <CardImg src="https://www.placecage.com/200/300" alt="our lord and savior" />
+          <CardTxt>
+            <h3>DOGE</h3>
+            <p>....</p>
+            <CardBtn>Twenty Years On Your Homeworld's Track</CardBtn>
+          </CardTxt>
+        </StyledCard>
+        <StyledCard>
+          <CardImg src="https://www.placecage.com/200/300" alt="our lord and savior" />
+          <CardTxt>
+            <h3>DOGE</h3>
+            <p>....</p>
+            <CardBtn>Twenty Years On Your Homeworld's Track</CardBtn>
+          </CardTxt>
+        </StyledCard>        
+      </StyledMain>
     )
   }
 }
