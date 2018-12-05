@@ -27,12 +27,20 @@ const TextDiv = styled.div`
 const CenterProjectCardsDiv = styled.div` 
   padding-top: 15%;
 `
+const StyledButton = styled.button`
+  display: flex;
+  justify-content: center;
+  margin-right: auto;
+  margin-top: 5rem;
+  margin-left: auto;
+  border: 2px solid palegreen;
+  border-radius: 3px;
+`
 
 export default class LandingPage extends Component {
   render() {
     return (
       <BackgroundDiv>
-        Welcome to Qinglandia
       <Parallax pages={2} scrolling={false}vertical ref={ref=> this.parallax = ref}>
         <ParallaxLayer offset={0} speed={0.9}>
         <TextDiv onClick={()=> this.parallax.scrollTo(1)}>  
@@ -40,27 +48,27 @@ export default class LandingPage extends Component {
               {props=> <div style={props}>Hi. I'm Qing. I'm a jr web developer.</div> }
             </Spring>
             <br/><br/>
-            <Spring config={config.default} from={{opacity:0}} to={{opacity:1}} reset={true} delay={3000}>
+            <Spring config={config.default} from={{opacity:0}} to={{opacity:1}} reset={true} delay={2000}>
               {props=> <div style={props}> I've recently finished a three month long <br/>coding bootcamp at General Assembly Atlanta.</div> }
             </Spring>
             <br/><br/>
-            <Spring config={config.default} from={{opacity:0}} to={{opacity:1}} reset={true} delay={6000}>
+            <Spring config={config.default} from={{opacity:0}} to={{opacity:1}} reset={true} delay={5000}>
               {props=> <div style={props}>Here are some of the projects I've built.<br/></div> }
             </Spring>
             <br/><br/>
-            <Spring config={config.default} from={{opacity:0}} to={{opacity:1}} reset={true} delay={9400}>
+            <Spring config={config.default} from={{opacity:0}} to={{opacity:1}} reset={true} delay={7500}>
               {props=> <div style={props}>Each app was built and deployed <br/>in agile development cycles <br/>using Git as version control</div> }
             </Spring>
             <br/><br/>
-            <Spring config={config.default} from={{opacity:0}} to={{opacity:1}} reset={true} delay={12000}>
+            <Spring config={config.default} from={{opacity:0}} to={{opacity:1}} reset={true} delay={9800}>
               {props=> <div style={props}>Click or scroll down to see my portfolio</div> }
             </Spring>
           </TextDiv> 
         </ParallaxLayer>
         {/* Projects */}
         <ParallaxLayer offset={1} speed={0.5}>
-          <button onClick={()=> this.parallax.scrollTo(0)}>Click Me To Go Up</button>
-          These are the projects<br/>
+          <br/><br/><br/><br/>
+          <StyledButton onClick={()=> this.parallax.scrollTo(0)}>Click Me To Go Up</StyledButton>
           <CenterProjectCardsDiv><Portfolio/></CenterProjectCardsDiv>
         </ParallaxLayer>
       </Parallax>
