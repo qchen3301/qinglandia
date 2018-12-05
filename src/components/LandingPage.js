@@ -7,7 +7,7 @@ import styled from 'styled-components'
 //background color is consistent across both parallax screens
 //this div will serve as the "wrapper" in the return function
 const BackgroundDiv = styled.div`
-  background: linear-gradient(to right, SlateBlue 0%, DeepSkyBlue 100%);
+  background: linear-gradient(to right, #39463B 55%, #282828 100%);
   height: 100vh;
   width: 100vw;
 `
@@ -22,6 +22,27 @@ const TextDiv = styled.div`
     margin-top: 5%;
     margin-left: 50%;
     text-transform: uppercase;
+    font-family: 'Inconsolata', monospace;
+    color: rgba(51,255,51,1);
+    font-size: 1em;
+`
+
+//TextLinks styling for Links
+const TextLinks = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  text-align: left;
+  padding-top: 10px;
+  margin-right: 10px;
+  margin-left: 50%;
+  text-transform: uppercase;
+  font-family: 'Inconsolata', monospace;
+  color: rgba(51,255,51,1);
+  font-size: 1em;
+  text-shadow: 4px 4px 5px #2f6627;
+  background:red;
 `
 //this styled-component is to align the contents of Portfolio.js 
 const CenterProjectCardsDiv = styled.div` 
@@ -37,10 +58,11 @@ const StyledButton = styled.button`
   color: black;
   border: 2px solid palevioletred;
   border-radius: 1px;
-  font-size: 1rem;
+  font-size: 1em;
 	background-color:rgba(0,0,0,0);
 	border:5px solid #18ab29;
-	color:#ffffff;
+  color: rgba(51,255,51,0.5);
+  font-family: 'Inconsolata', monospace;
 	font-size:28px;
 	padding:23px 23px;
 	text-shadow:4px 4px 5px #2f6627;
@@ -50,6 +72,11 @@ export default class LandingPage extends Component {
   render() {
     return (
       <BackgroundDiv>
+        <TextLinks>
+        Git - Hub <br/>
+        Linked - In <br/>
+        Electronic Mail<br/>
+        </TextLinks>
       <Parallax pages={2} scrolling={false}vertical ref={ref=> this.parallax = ref}>
         <ParallaxLayer offset={0} speed={0.9}>
         <TextDiv onClick={()=> this.parallax.scrollTo(1)}>  
@@ -70,7 +97,7 @@ export default class LandingPage extends Component {
             </Spring>
             <br/><br/>
             <Spring config={config.default} from={{opacity:0}} to={{opacity:1}} reset={true} delay={9800}>
-              {props=> <div style={props}>Click or scroll down to see my portfolio</div> }
+              {props=> <div style={props}>Click here to see my portfolio</div> }
             </Spring>
           </TextDiv> 
         </ParallaxLayer>
