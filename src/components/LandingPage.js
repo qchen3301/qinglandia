@@ -42,7 +42,13 @@ const StyledButton = styled.button`
   color: rgba(51,255,51,0.5);
   font-family: 'Inconsolata', monospace;
 	padding:11px 11px;
-	text-shadow:4px 4px 5px #2f6627;
+  text-shadow:4px 4px 5px #2f6627;
+  cursor: pointer;
+`
+// I don't really need to explain this do I (wow)
+const DogeContainer = styled.div`
+  /* display: flex; */
+  justify-content: left;
 `
 
 export default class LandingPage extends Component {
@@ -52,16 +58,23 @@ export default class LandingPage extends Component {
       <Parallax pages={2} scrolling={true} vertical ref={ref=> this.parallax = ref}>
         {/*Intro Flavor Text */}
         <ParallaxLayer offset={0} speed={0.9} factor={2}>
+        <DogeContainer>
+          <Spring config={config.default} from={{opacity:0}} to={{opacity:1}} reset={true} delay={9900}>
+            {props=> <div style={props}>
+              <img src="https://i.imgur.com/xCFLcsv.gif" width="100" height="100" alt="see the doge"/>
+            </div>}
+          </Spring>
+        </DogeContainer>
         <TextDiv onClick={()=> this.parallax.scrollTo(1)}>  
-            <Spring config={config.default} from={{opacity:0}} to={{opacity:1}} reset={true}>
+            <Spring config={config.default} from={{opacity:0}} to={{opacity:1}} reset={true} delay={2000}>
               {props=> <div style={props}>Hi. I'm Qing. I'm a jr web developer.</div> }
             </Spring>
             <br/><br/>
-            <Spring config={config.default} from={{opacity:0}} to={{opacity:1}} reset={true} delay={2000}>
+            <Spring config={config.default} from={{opacity:0}} to={{opacity:1}} reset={true} delay={4000}>
               {props=> <div style={props}> I've recently finished a three month long <br/>coding bootcamp at General Assembly Atlanta.</div> }
             </Spring>
             <br/><br/>
-            <Spring config={config.default} from={{opacity:0}} to={{opacity:1}} reset={true} delay={5000}>
+            <Spring config={config.default} from={{opacity:0}} to={{opacity:1}} reset={true} delay={6000}>
               {props=> <div style={props}>Here are some of the projects I've built.<br/></div> }
             </Spring>
             <br/><br/>
