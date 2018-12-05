@@ -19,22 +19,31 @@ const TextDiv = styled.div`
     flex-direction: column;
     text-align: center;
     margin-right: auto;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 50%;
     text-transform: uppercase;
 `
 //this styled-component is to align the contents of Portfolio.js 
 const CenterProjectCardsDiv = styled.div` 
-  padding-top: 15%;
+  padding-top: 5%;
 `
 const StyledButton = styled.button`
   display: flex;
   justify-content: center;
   margin-right: auto;
-  margin-top: 5rem;
+  margin-top: 15px;
   margin-left: auto;
-  border: 2px solid palegreen;
-  border-radius: 3px;
+  border: 3px;
+  color: black;
+  border: 2px solid palevioletred;
+  border-radius: 1px;
+  font-size: 1rem;
+	background-color:rgba(0,0,0,0);
+	border:5px solid #18ab29;
+	color:#ffffff;
+	font-size:28px;
+	padding:23px 23px;
+	text-shadow:4px 4px 5px #2f6627;
 `
 
 export default class LandingPage extends Component {
@@ -68,7 +77,7 @@ export default class LandingPage extends Component {
         {/* Projects */}
         <ParallaxLayer offset={1} speed={0.5}>
           <br/><br/><br/><br/>
-          <StyledButton onClick={()=> this.parallax.scrollTo(0)}>Click Me To Go Up</StyledButton>
+          <StyledButton onClick={()=> this.parallax.scrollTo(0)}>The Sun Always Shines In CyberS P A C E</StyledButton>
           <CenterProjectCardsDiv><Portfolio/></CenterProjectCardsDiv>
         </ParallaxLayer>
       </Parallax>
