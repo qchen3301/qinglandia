@@ -24,9 +24,8 @@ const TextDiv = styled.div`
     text-transform: uppercase;
     font-family: 'Inconsolata', monospace;
     color: rgba(51,255,51,1);
-    font-size: 1em;
+    font-size: 2em;
 `
-
 // a flexbox container to hold buttons
 const StyledButtons = styled.div`
   display: flex;
@@ -34,7 +33,6 @@ const StyledButtons = styled.div`
   margin-top: 15px;
   align-items: stretch;
 `
-
 const StyledButton = styled.button`
   border: 3px;
   border-radius: 1px;
@@ -52,7 +50,8 @@ export default class LandingPage extends Component {
     return (
       <BackgroundDiv>
       <Parallax pages={2} scrolling={true} vertical ref={ref=> this.parallax = ref}>
-        <ParallaxLayer offset={0} speed={0.9}>
+        {/*Intro Flavor Text */}
+        <ParallaxLayer offset={0} speed={0.9} factor={2}>
         <TextDiv onClick={()=> this.parallax.scrollTo(1)}>  
             <Spring config={config.default} from={{opacity:0}} to={{opacity:1}} reset={true}>
               {props=> <div style={props}>Hi. I'm Qing. I'm a jr web developer.</div> }
@@ -75,17 +74,21 @@ export default class LandingPage extends Component {
             </Spring>
           </TextDiv> 
         </ParallaxLayer>
-
         {/* Projects */}
-        <ParallaxLayer offset={1} speed={0.5}>
+        <ParallaxLayer offset={1} speed={0.5} factor={2}>
+          {/* Up Button On One Row */}
           <StyledButtons>
             <StyledButton onClick={()=> this.parallax.scrollTo(0)}>^</StyledButton>
           </StyledButtons>
+          {/* Link Buttons On Row Below */}
+          <br/><br/>
           <StyledButtons>
             <StyledButton onClick={()=> window.location.replace("https://github.com/qchen3301/")}>GIT-hub</StyledButton>
             <StyledButton onClick={()=> window.location.replace("https://www.linkedin.com/in/qing-chen-a7774b60/")}>link[e]d in</StyledButton>
             <StyledButton onClick={()=> window.location.href = "mailto:q.chen.3301@gmail.com"}>electronic mail</StyledButton>
           </StyledButtons>
+          {/* Portfolio.js Component Below */}
+          <br/><br/><br/><br/>
           <Portfolio/>
         </ParallaxLayer>
       </Parallax>

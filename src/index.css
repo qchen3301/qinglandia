@@ -15,4 +15,9 @@ code {
 
 a {
   text-decoration: none;
+  color: rgb(0,255,12);
+}
+
+a:visited{
+  text-decoration: none;
 }

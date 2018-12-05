@@ -10,51 +10,49 @@ const StyledMain = styled.main`
 const StyledCard = styled.article`
   flex: 0 0 200px;
   margin: 10px;
-  border: 1px solid #ccc;
-  box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
-`
-const CardImg = styled.img`
-  max-width: 100%;
+  border: 1px solid rgb(51,255,51);
+  box-shadow: 2px 2px 6px 0px rgba(51,255,51, 0.3);
 `
 const CardTxt = styled.div`
   padding: 0 20px 20px;
-`
-const CardBtn = styled.button`
-  padding: 0 20px 20px;
-  background: gray;
-  border: 0;
-  color: white;
-  padding: 10px;
-  width: 100%;
+  font-family: 'Inconsolata', monospace;
+  text-align: center;
+  color: rgb(51,255,0);
 `
 export default class Portfolio extends Component {
   render() {
     return (
       <StyledMain>
         <StyledCard>
-          <CardImg src="https://www.placecage.com/200/300" alt="our lord and savior" />
           <CardTxt>
-            <h3>DOGE</h3>
-            <p>....</p>
-            <CardBtn>Twenty Years On Your Homeworld's Track</CardBtn>
+            <a href="https://agitated-galileo-e23f2b.netlify.com">
+            <h3>Slots</h3>
+            <p>A slots game throwback to the late 90s era of website design</p>
+            </a>
           </CardTxt>
         </StyledCard>
         <StyledCard>
-          <CardImg src="https://www.placecage.com/200/300" alt="our lord and savior" />
+          
           <CardTxt>
-            <h3>DOGE</h3>
-            <p>....</p>
-            <CardBtn>Twenty Years On Your Homeworld's Track</CardBtn>
+            <h3>College</h3>
+            <p>A (sigh) to-do list app to help my little sister keep track of her application process to various colleges</p>
           </CardTxt>
         </StyledCard>
         <StyledCard>
-          <CardImg src="https://www.placecage.com/200/300" alt="our lord and savior" />
+          
           <CardTxt>
-            <h3>DOGE</h3>
-            <p>....</p>
-            <CardBtn>Twenty Years On Your Homeworld's Track</CardBtn>
+            <h3>The Taroge</h3>
+            <p>The capstone project! A React-On-Rails app making external API calls on the back-end</p>
           </CardTxt>
         </StyledCard>        
+
+        <StyledCard>
+          <CardTxt>
+            <h3>The Sun Always Shines In C Y B E R S P A S E</h3>
+            <p>My first attempt at a Web 2.0 website (saucy language ahead)</p>
+          </CardTxt>
+        </StyledCard>  
+
       </StyledMain>
     )
   }
