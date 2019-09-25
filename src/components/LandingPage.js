@@ -97,7 +97,7 @@ export default class LandingPage extends Component {
           <br/><br/>
           <StyledButtons>
             <StyledButton onClick={()=> window.location.replace("https://github.com/qchen3301/")}>GIT-hub</StyledButton>
-            <StyledButton onClick={()=> window.location.replace("https://www.linkedin.com/in/qing-chen-a7774b60/")}>link[e]d in</StyledButton>
+            <StyledButton onClick={()=> window.location.replace("https://www.linkedin.com/in/qing-c-a7774b60/")}>link[e]d in</StyledButton>
             <StyledButton onClick={()=> window.location.href = "mailto:q.chen.3301@gmail.com"}>electronic mail</StyledButton>
           </StyledButtons>
           {/* Portfolio.js Component Below */}
